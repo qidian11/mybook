@@ -26,9 +26,9 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 // 新增的内容
-def keystorePropertiesFile = rootProject.file("key.properties")
-def keystoreProperties = new Properties()
-keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+// def keystorePropertiesFile = rootProject.file("key.properties")
+// def keystoreProperties = new Properties()
+// keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 // 新增内容end
 
 android {
@@ -48,14 +48,14 @@ android {
     }
 
     // 新增内容 这块就是从
-    signingConfigs {
-        release {
-            keyAlias keystoreProperties['keyAlias']
-            keyPassword keystoreProperties['keyPassword']
-            storeFile file(keystoreProperties['storeFile'])
-            storePassword keystoreProperties['storePassword']
-        }
-    }
+    // signingConfigs {
+    //     release {
+    //         keyAlias keystoreProperties['keyAlias']
+    //         keyPassword keystoreProperties['keyPassword']
+    //         storeFile file(keystoreProperties['storeFile'])
+    //         storePassword keystoreProperties['storePassword']
+    //     }
+    // }
     // 新增内容end
 
     buildTypes {
